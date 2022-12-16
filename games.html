@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/default.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="JS/pokemon.js" type = "module"></script>
+    <script src="JS/api.js"></script>
+    <title>Games</title>
+</head>
+<body>
+    <header>
+        <h1 class="head">Ethan's Portfolio</h1>
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li class="logo">Ethan Hostman</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="spanish.html">Spanish</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a class="active" href="games.html">Games</a></li>
+            <li><a href="nature.html">Nature</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>I also enjoy playing video games, especially from Nintendo.</h2>
+            <article>
+                <h3>Zelda, Smash, Pokemon</h3>
+                <p>Some of my favorite games are <b>The Legend of Zelda</b> and <b>Super Smash Bros</b>, although I've lost any Smash Bros skill that I once had. I've also been an avid fan of <b>Pokemon</b> ever since I was little. Here's some photo evidence of my love for Pokemon:</p>
+                <figure>
+                    <img src="images/gengar_pumpkin.jpeg" alt="A pumpkin carved to resemble the Pokemon Gengar">
+                    <figcaption>I carved this pumpkin to resemble one of my favorite Pokemon, Gengar.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/pokemon_happy_meal.jpeg" alt="A McDonald's Happy Meal box resembling Pikachu">
+                    <figcaption>My inner child was happy when I got my hands on a Pokemon Happy Meal.</figcaption>
+                </figure>
+            </article>
+        </section>
+        <br>
+        <h1>The following are some Pokemon activities:</h1>
+        <noscript>These activities cannot be done without JavaScript. Please enable JavaScript to proceed.</noscript>
+        <br>
+    <div id="app">
+        <p>To see Gengar and Venusaur as babies, <i>hover</i> over them with your mouse!</p>
+        <img :src="pokemon1" alt="Ghastly when hovered, Gengar when not" @mouseover="updateG()" @mouseleave="resetG()"/>
+        <br>
+        <br>
+        <img :src="pokemon2" alt="Bulbasaur when hovered, Venusaur when not" @mouseover="updateB()" @mouseleave="resetB()"/>
+        <br>
+        <br>
+        <p>To evolve Eevee, <i>click</i> on either the water, fire, or thunder stone.</p>
+        <img :src="pokemon3" alt="one of the Eeveelutions">
+        <br>
+        <button id="water" @click="evolveV"></button>
+        <button id="fire" @click="evolveF"></button>
+        <button id="thunder" @click="evolveJ"></button>
+        <button id="reset" @click="reset">Reset</button>
+    </div>
+    <br>
+    <section>
+        <p>To search for a specific Pokemon, please enter a pokemon name in the search!</p>
+        <p>Please only use <i>lowercase</i> characters.</p>
+        <input type="text" id="searchPok">
+        <button id="pokemonSearch" onclick="getPokemon()">Search</button>
+        <p id="error"></p>
+        <br>
+        <img id="pokemon" src="images/question1.png" alt="pokemon">
+    </section>
+    </main>
+    <footer>
+        <p><b>Author:</b> Ethan Hostman | <b>Email:</b> ehostman@bu.edu</p>
+    </footer>
+</body>
+</html>
